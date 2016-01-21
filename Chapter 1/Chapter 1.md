@@ -24,6 +24,7 @@ nearly circumnavigates the curve.
     - Put the elements of S in the knapsack from smallest to largest, i.e. the best-fit algorithm.
         
         > S = {3,4,5} T = 9
+        
     - Put the elements of S in the knapsack from largest to smallest.
         
         > S = {1,2,3} T = 4
@@ -42,4 +43,4 @@ nearly circumnavigates the curve.
     
     > S5 = {2,4,6,8,10}
     
-    > Optimal solution is S4 U S5; however the specified algorithm will choose one of S1,S2 or S5 and then go on to choose two more sets to get a full cover (leading to three set selections).
+    > Optimal solution is S4 U S5; however the specified algorithm will choose one of S1, S2 or S5 and then go on to choose two more sets to get a full cover (leading to three set selections).
