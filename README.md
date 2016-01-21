@@ -1,2 +1,2 @@
 # TADMBook
-Solutions to problems in The Algorithm Design Book
+Solutions to problems in The Algorithm Design Manual 
