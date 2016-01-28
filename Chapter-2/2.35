@@ -1,0 +1,6 @@
+for i=1 to n do
+    for j=i to 2*i do
+       output foobar
+       
+       
+Sum =  n(n + 1) / 2 + n
