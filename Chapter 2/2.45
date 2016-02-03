@@ -1,0 +1,8 @@
+Consider the following algorithm to find the minimum element in an array of numbers A[0,…,n]. One extra variable tmp is allocated to hold the current minimum value. Start from A[0]; "tmp" is compared against A[1], A[2], …, A[N] in order. When A[i]<tmp, tmp=A[i]. What is the expected number of times that the assignment operation tmp=A[i] is performed?
+
+**Solution**
+The expectation that a number will be the minimum value is 1 / n.
+
+Since this algorithm proceeds sequentially, the algorithm goes from 1 to n with each value having a 1/n chance of resulting in an assignment to the tmp value. 
+
+Expected number of times is thus the summation from 1 to n of the value 1 / n. This is the harmonic series and thus gives a value ~ *ln n*
