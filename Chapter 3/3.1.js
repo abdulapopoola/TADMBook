@@ -9,31 +9,24 @@
  */
 
 function balancedParens(string) {
-    var rootNode = {
-        val: null,
+    var activeNode = {
         left: null,
         right: null,
         parent: null
     };
 
-    var activeNode = rootNode;
     for (var i = 0, len = string.length; i < len; i++) {
         if (string[i] === '(') {
-            var newChild = {
-                val: '(',
+            activeNode = {
                 left: null,
                 right: null,
                 parent: activeNode
             }
-            activeNode = newChild;
         } else {
-            if(!activeNode.parent) {
-                return i;
+            var parent = activeNode.parent;
+            if(!activeNode.parent || parent.right) {
+                return 'Mismatch at : ' + i;
             }
-            
-            var parent = activeNode.parent;            
-            if(parent.right)
-                return i;
             
             activeNode = parent;
         }
