@@ -1,11 +1,23 @@
 /*
- * Use a binary tree
- * Create new active node for every encountered (
- * When a ) is seen and the active node is not the root
- * Check if the node's parent has a ) child already
- * if so, then that's a mismatch
- * Otherwise, set the active node to the parent
- * (since the left and right children match and have been dropped )
+
+    QUESTION
+    3-1. A common problem for compilers and text editors is determining whether the parentheses in a string are balanced and properly nested. 
+    For example, the string ((())())() contains properly nested pairs of parentheses, which the strings )()( and ()) do not.
+    Give an algorithm that returns true if a string contains properly nested and balanced parentheses, and false if otherwise. 
+    For full credit, identify the position of the first offending parenthesis if the string is not properly nested and balanced.
+
+*/
+
+
+/*
+    ANALYSIS
+    Use a binary tree
+    Create new active node for every encountered (
+    When a ) is seen and the active node is not the root
+    Check if the node's parent has a ) child already
+    if so, then that's a mismatch
+    Otherwise, set the active node to the parent
+    (since the left and right children match and have been dropped )
  */
 
 function balancedParens(string) {
@@ -38,3 +50,9 @@ function balancedParens(string) {
 balancedParens('()');
 balancedParens('(((((((()()())))))))');
 balancedParens(')()()');
+
+/*
+    OTHER APPROACHES
+    * Using a stack
+    * Using a counter
+*/
