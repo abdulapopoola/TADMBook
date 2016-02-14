@@ -1,0 +1,12 @@
+We have seen how dynamic arrays enable arrays to grow while still achieving constant-time amortized performance. This problem concerns extending dynamic arrays to let them both grow and shrink on demand.
+
+ * Consider an underflow strategy that cuts the array size in half whenever the array falls below half full. Give an example sequence of insertions and deletions where this strategy gives a bad amortized cost.
+* Then, give a better underflow strategy than that suggested above, one that achieves constant amortized cost per deletion.
+
+**Solution**
+
+ * Delete a node when the node is half full, this forces a resize to half the size. Add a new node,
+   this triggers another expansion.
+   
+ * Only resize when size fall below 1 / 4 of the full size. This eliminates the need for the resize
+   downsize see-saw.
