@@ -1,0 +1,6 @@
+/*
+    QUESTION
+    You are given a search string and a magazine. You seek to generate all the characters in
+     search string by cutting them out from the magazine. Give an algorithm to efficiently 
+     determine whether the magazine contains all the letters in the search string.
+*/
