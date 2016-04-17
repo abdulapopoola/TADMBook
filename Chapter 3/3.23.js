@@ -4,15 +4,35 @@
 */
 
 'use strict';
-function reverse(linkedList){
-    let node = linkedList;
+function reverse(node) {
     let prev = null;
-    
-    while(node){
+
+    while (node) {
         let tmp = node.next;
         node.next = prev;
         prev = node;
         node = tmp;
     }
+
     return prev;
 }
+
+function reverseRecursive(node) {
+    function reverseList(head, previous) {
+        if(head.next){
+            return reverseList(head.next, head);
+        }
+        head.next = previous;
+    }
+    reverseList(node, null);
+}
+
+let sample = {
+    next: {
+        next: {
+            next: {
+                
+            }
+        }
+    }
+};
