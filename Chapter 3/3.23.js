@@ -18,21 +18,37 @@ function reverse(node) {
 }
 
 function reverseRecursive(node) {
-    function reverseList(head, previous) {
-        if(head.next){
-            return reverseList(head.next, head);
-        }
-        head.next = previous;
+    if(!node.next){
+        return node;
     }
-    reverseList(node, null);
+    
+    let nextNode = node.next;
+    delete node.next;
+    let reversed = reverseRecursive(nextNode);
+    reversed.next = node;
+        
+    return reversed;
 }
 
-let sample = {
+var list = 
+{
+  name: "1",
+  next: {
+    name: "2",
     next: {
-        next: {
-            next: {
-                
-            }
-        }
+      name: "3",
+      next: {
+        name: "4"
+      }
     }
+  }
 };
+
+console.log("Original list");
+var head = list;
+function print(head){
+    while (head != undefined) {
+      console.log(head.name);
+      head = head.next;
+    }
+}
