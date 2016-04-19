@@ -19,14 +19,14 @@ function reverse(node) {
 
 function reverseRecursive(node) {
     if(!node.next){
-        return node;
+        return {node: node, tail: node}
     }
     
     let nextNode = node.next;
     delete node.next;
     let reversed = reverseRecursive(nextNode);
-    reversed.next = node;
-        
+    reversed.tail.next = node;
+    reversed.tail = node;
     return reversed;
 }
 
