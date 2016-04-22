@@ -6,9 +6,13 @@
 */
 
 function contains(searchStr, magazineChars) {
-    let charCodeToFreqMap = {};
-
     let unfoundCharsLen = searchStr.length;
+    let magazineCharLen = magazineChars.length;
+    if(unfoundCharsLen > magazineCharLen){
+        return false;
+    }
+    
+    let charCodeToFreqMap = {};
     for (let i = 0; i < unfoundCharsLen; i++) {
         let char = searchStr.charCodeAt(i);
         if (charCodeToFreqMap[char]) {
@@ -18,7 +22,6 @@ function contains(searchStr, magazineChars) {
         }
     }
     
-    let magazineCharLen = magazineChars.length;
     for (let i = 0; i < magazineCharLen; i++){
         let char = magazineChars.charCodeAt(i);
         if (charCodeToFreqMap[char] > 0){
