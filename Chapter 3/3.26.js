@@ -10,7 +10,7 @@ function reverse(str) {
     let j = 0;
     let char = str[i];
     while (char != null) {
-        if(char === ' '){
+        if (char === ' ') {
             let substr = str.substring(i, j);
             stack.push(substr);
             j = i + 1;

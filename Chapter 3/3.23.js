@@ -5,32 +5,31 @@
 
 'use strict';
 function reverse(node) {
-    let prev = null;
+  let prev = null;
 
-    while (node) {
-        let tmp = node.next;
-        node.next = prev;
-        prev = node;
-        node = tmp;
-    }
+  while (node) {
+    let tmp = node.next;
+    node.next = prev;
+    prev = node;
+    node = tmp;
+  }
 
-    return prev;
+  return prev;
 }
 
 function reverseRecursive(node) {
-    if(!node || !node.next){ 
-      return node;
-    }
+  if (!node || !node.next) {
+    return node;
+  }
 
-    let reverseInsertPosition = node.next;
-    delete node.next;
-    let reversed = reverseRecursive(reverseInsertPosition);
-    reverseInsertPosition.next = node;
-    return reversed;
+  let reverseInsertPosition = node.next;
+  delete node.next;
+  let reversed = reverseRecursive(reverseInsertPosition);
+  reverseInsertPosition.next = node;
+  return reversed;
 }
 
-var list = 
-{
+var list = {
   name: "1",
   next: {
     name: "2",
@@ -45,9 +44,9 @@ var list =
 
 console.log("Original list");
 var head = list;
-function print(head){
-    while (head != undefined) {
-      console.log(head.name);
-      head = head.next;
-    }
+function print(head) {
+  while (head != undefined) {
+    console.log(head.name);
+    head = head.next;
+  }
 }
